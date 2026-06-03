@@ -45,6 +45,7 @@ class Personagens:
     def defesa_total (self, defensor):
       defesa = (defensor.defesa + dado.dados(20,1)) - self.defesa
       return defesa
+    
 #- Dano ------------------------------------------------------------
     @property
     def dano_ataque(self):
@@ -52,6 +53,7 @@ class Personagens:
       ataque_forte = int(self.ataque*random.randint(1,2))
       ataque = [ataque_forte, ataque_fraco]
       return random.choice(ataque)
+    
 #- Ajuste de vida --------------------------------------------------
     def loss_hp(self, ataque):
       self.vida_atual = self.vida_atual - ataque
@@ -138,7 +140,7 @@ class Personagens:
       print('  ===xx    INICIO DE JOGO!!    xx===')
       print('=====xx -------------------- xx=====')
       i = 0
-      while i != 10:
+      while True:
         self.vida_atual = self.vida_max
         nova_funcao = self.funcao_aleatoria()
         self.funcao = nova_funcao
@@ -151,7 +153,7 @@ class Personagens:
             print(40*'x')
             print('===xx    O ATACANTE MORREU!!    xx===')
             print(40*'-')
-        else: i = 10
+        else: break
       else:
           print(40*'-')
           print(' ===xx        FIM DE JOGO       xx===')
