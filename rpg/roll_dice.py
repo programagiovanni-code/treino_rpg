@@ -1,6 +1,6 @@
 import random
 
-def dados(lados, numero_dados, bonus):
+def dados(lados, numero_dados):
   ''' Simula uma jogada de dados onde você especifica 3 valores: 
       lados = Numero de lados | Valor máximo do intervalo, 
       numero_dados = Quantos dados foram jogados | Quantidade de resultados
@@ -12,6 +12,5 @@ def dados(lados, numero_dados, bonus):
       total += rolada
       i += 1
   else: 
-    total += bonus 
     return total 
     
